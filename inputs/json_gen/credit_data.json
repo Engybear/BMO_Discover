@@ -1,0 +1,581 @@
+[
+    {
+        "customer_id": 1,
+        "credit_score": 801,
+        "delinquencies": 3,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 2,
+        "credit_score": 601,
+        "delinquencies": 2,
+        "outstanding_loans": [
+            {
+                "type": "car",
+                "amount": 69456.0
+            },
+            {
+                "type": "student",
+                "amount": 88854.24
+            }
+        ]
+    },
+    {
+        "customer_id": 3,
+        "credit_score": 659,
+        "delinquencies": 4,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 4,
+        "credit_score": 398,
+        "delinquencies": 0,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 5,
+        "credit_score": 655,
+        "delinquencies": 2,
+        "outstanding_loans": [
+            {
+                "type": "car",
+                "amount": 18283.52
+            }
+        ]
+    },
+    {
+        "customer_id": 6,
+        "credit_score": 518,
+        "delinquencies": 0,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 7,
+        "credit_score": 754,
+        "delinquencies": 4,
+        "outstanding_loans": [
+            {
+                "type": "house",
+                "amount": 29435.61
+            }
+        ]
+    },
+    {
+        "customer_id": 8,
+        "credit_score": 560,
+        "delinquencies": 1,
+        "outstanding_loans": [
+            {
+                "type": "car",
+                "amount": 22709.63
+            },
+            {
+                "type": "business",
+                "amount": 67255.36
+            },
+            {
+                "type": "student",
+                "amount": 74619.57
+            }
+        ]
+    },
+    {
+        "customer_id": 9,
+        "credit_score": 316,
+        "delinquencies": 4,
+        "outstanding_loans": [
+            {
+                "type": "house",
+                "amount": 11636.82
+            }
+        ]
+    },
+    {
+        "customer_id": 10,
+        "credit_score": 737,
+        "delinquencies": 1,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 11,
+        "credit_score": 809,
+        "delinquencies": 0,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 12,
+        "credit_score": 402,
+        "delinquencies": 2,
+        "outstanding_loans": [
+            {
+                "type": "car",
+                "amount": 33315.21
+            }
+        ]
+    },
+    {
+        "customer_id": 13,
+        "credit_score": 499,
+        "delinquencies": 2,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 14,
+        "credit_score": 593,
+        "delinquencies": 5,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 15,
+        "credit_score": 800,
+        "delinquencies": 4,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 16,
+        "credit_score": 549,
+        "delinquencies": 4,
+        "outstanding_loans": [
+            {
+                "type": "car",
+                "amount": 65657.16
+            },
+            {
+                "type": "business",
+                "amount": 19665.74
+            },
+            {
+                "type": "student",
+                "amount": 85443.16
+            }
+        ]
+    },
+    {
+        "customer_id": 17,
+        "credit_score": 306,
+        "delinquencies": 2,
+        "outstanding_loans": [
+            {
+                "type": "car",
+                "amount": 80426.72
+            },
+            {
+                "type": "student",
+                "amount": 78103.11
+            },
+            {
+                "type": "car",
+                "amount": 4360.87
+            }
+        ]
+    },
+    {
+        "customer_id": 18,
+        "credit_score": 426,
+        "delinquencies": 4,
+        "outstanding_loans": [
+            {
+                "type": "personal",
+                "amount": 61861.43
+            }
+        ]
+    },
+    {
+        "customer_id": 19,
+        "credit_score": 347,
+        "delinquencies": 4,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 20,
+        "credit_score": 642,
+        "delinquencies": 5,
+        "outstanding_loans": [
+            {
+                "type": "business",
+                "amount": 80044.61
+            },
+            {
+                "type": "house",
+                "amount": 67349.3
+            },
+            {
+                "type": "student",
+                "amount": 6985.47
+            }
+        ]
+    },
+    {
+        "customer_id": 21,
+        "credit_score": 756,
+        "delinquencies": 2,
+        "outstanding_loans": [
+            {
+                "type": "personal",
+                "amount": 4032.65
+            },
+            {
+                "type": "student",
+                "amount": 12233.96
+            },
+            {
+                "type": "student",
+                "amount": 38550.46
+            }
+        ]
+    },
+    {
+        "customer_id": 22,
+        "credit_score": 633,
+        "delinquencies": 5,
+        "outstanding_loans": [
+            {
+                "type": "house",
+                "amount": 26351.55
+            },
+            {
+                "type": "student",
+                "amount": 3717.39
+            }
+        ]
+    },
+    {
+        "customer_id": 23,
+        "credit_score": 548,
+        "delinquencies": 2,
+        "outstanding_loans": [
+            {
+                "type": "personal",
+                "amount": 97497.99
+            },
+            {
+                "type": "car",
+                "amount": 42523.93
+            },
+            {
+                "type": "house",
+                "amount": 51545.62
+            }
+        ]
+    },
+    {
+        "customer_id": 24,
+        "credit_score": 385,
+        "delinquencies": 2,
+        "outstanding_loans": [
+            {
+                "type": "student",
+                "amount": 22730.85
+            },
+            {
+                "type": "house",
+                "amount": 16468.4
+            }
+        ]
+    },
+    {
+        "customer_id": 25,
+        "credit_score": 719,
+        "delinquencies": 1,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 26,
+        "credit_score": 502,
+        "delinquencies": 1,
+        "outstanding_loans": [
+            {
+                "type": "house",
+                "amount": 49497.95
+            }
+        ]
+    },
+    {
+        "customer_id": 27,
+        "credit_score": 753,
+        "delinquencies": 5,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 28,
+        "credit_score": 389,
+        "delinquencies": 3,
+        "outstanding_loans": [
+            {
+                "type": "car",
+                "amount": 48212.91
+            },
+            {
+                "type": "student",
+                "amount": 31394.45
+            },
+            {
+                "type": "house",
+                "amount": 11131.67
+            }
+        ]
+    },
+    {
+        "customer_id": 29,
+        "credit_score": 339,
+        "delinquencies": 5,
+        "outstanding_loans": [
+            {
+                "type": "house",
+                "amount": 26815.22
+            },
+            {
+                "type": "personal",
+                "amount": 89825.36
+            },
+            {
+                "type": "business",
+                "amount": 22531.2
+            }
+        ]
+    },
+    {
+        "customer_id": 30,
+        "credit_score": 627,
+        "delinquencies": 5,
+        "outstanding_loans": [
+            {
+                "type": "personal",
+                "amount": 4014.92
+            }
+        ]
+    },
+    {
+        "customer_id": 31,
+        "credit_score": 470,
+        "delinquencies": 2,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 32,
+        "credit_score": 559,
+        "delinquencies": 1,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 33,
+        "credit_score": 442,
+        "delinquencies": 3,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 34,
+        "credit_score": 486,
+        "delinquencies": 0,
+        "outstanding_loans": [
+            {
+                "type": "car",
+                "amount": 78872.62
+            },
+            {
+                "type": "car",
+                "amount": 39340.83
+            }
+        ]
+    },
+    {
+        "customer_id": 35,
+        "credit_score": 551,
+        "delinquencies": 4,
+        "outstanding_loans": [
+            {
+                "type": "house",
+                "amount": 30005.25
+            },
+            {
+                "type": "car",
+                "amount": 96557.6
+            },
+            {
+                "type": "house",
+                "amount": 33795.1
+            }
+        ]
+    },
+    {
+        "customer_id": 36,
+        "credit_score": 713,
+        "delinquencies": 4,
+        "outstanding_loans": [
+            {
+                "type": "personal",
+                "amount": 74550.43
+            }
+        ]
+    },
+    {
+        "customer_id": 37,
+        "credit_score": 309,
+        "delinquencies": 4,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 38,
+        "credit_score": 333,
+        "delinquencies": 4,
+        "outstanding_loans": [
+            {
+                "type": "house",
+                "amount": 19910.15
+            },
+            {
+                "type": "student",
+                "amount": 46554.43
+            }
+        ]
+    },
+    {
+        "customer_id": 39,
+        "credit_score": 767,
+        "delinquencies": 3,
+        "outstanding_loans": [
+            {
+                "type": "personal",
+                "amount": 69554.62
+            }
+        ]
+    },
+    {
+        "customer_id": 40,
+        "credit_score": 736,
+        "delinquencies": 2,
+        "outstanding_loans": [
+            {
+                "type": "student",
+                "amount": 11745.55
+            },
+            {
+                "type": "house",
+                "amount": 69472.19
+            }
+        ]
+    },
+    {
+        "customer_id": 41,
+        "credit_score": 496,
+        "delinquencies": 0,
+        "outstanding_loans": [
+            {
+                "type": "business",
+                "amount": 98902.91
+            },
+            {
+                "type": "car",
+                "amount": 24139.34
+            }
+        ]
+    },
+    {
+        "customer_id": 42,
+        "credit_score": 342,
+        "delinquencies": 5,
+        "outstanding_loans": [
+            {
+                "type": "personal",
+                "amount": 69823.95
+            }
+        ]
+    },
+    {
+        "customer_id": 43,
+        "credit_score": 797,
+        "delinquencies": 2,
+        "outstanding_loans": [
+            {
+                "type": "business",
+                "amount": 78156.11
+            },
+            {
+                "type": "student",
+                "amount": 63505.82
+            },
+            {
+                "type": "house",
+                "amount": 78518.57
+            }
+        ]
+    },
+    {
+        "customer_id": 44,
+        "credit_score": 572,
+        "delinquencies": 0,
+        "outstanding_loans": [
+            {
+                "type": "personal",
+                "amount": 19001.24
+            },
+            {
+                "type": "car",
+                "amount": 17549.49
+            },
+            {
+                "type": "business",
+                "amount": 45855.36
+            }
+        ]
+    },
+    {
+        "customer_id": 45,
+        "credit_score": 405,
+        "delinquencies": 4,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 46,
+        "credit_score": 530,
+        "delinquencies": 3,
+        "outstanding_loans": [
+            {
+                "type": "business",
+                "amount": 38228.48
+            },
+            {
+                "type": "house",
+                "amount": 3057.8
+            }
+        ]
+    },
+    {
+        "customer_id": 47,
+        "credit_score": 328,
+        "delinquencies": 4,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 48,
+        "credit_score": 452,
+        "delinquencies": 4,
+        "outstanding_loans": []
+    },
+    {
+        "customer_id": 49,
+        "credit_score": 545,
+        "delinquencies": 4,
+        "outstanding_loans": [
+            {
+                "type": "business",
+                "amount": 40111.33
+            }
+        ]
+    },
+    {
+        "customer_id": 50,
+        "credit_score": 623,
+        "delinquencies": 2,
+        "outstanding_loans": [
+            {
+                "type": "personal",
+                "amount": 10299.12
+            },
+            {
+                "type": "student",
+                "amount": 66654.33
+            }
+        ]
+    }
+]
