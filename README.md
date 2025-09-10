@@ -47,6 +47,8 @@ Additionally, the Bedrock platform allows for a user to query specific or broad 
   <img src="Media/AWS_Bedrock/Chatbot_Test2.png" style="width: 500px;" />
 </div>
 
+###### *Answers were double checked against the database.
+
 ### Design Breakdown
 
 Here you can see an overview of the design. All inputs are randomly generated data that consist of large batch data and live streamed data. The batch data was done in python to generate unstructured csv data on ATM activity, semi-structed json data on credit information and loans, and a structured psql database containing basic customer info. The streamed data was done through a docker kafka (KRaft-managed) server that would receive randomly generated customer complaints every 5 seconds from a kafka producer, which would be read by a kafka consumer and uploaded to AWS DynamoDB in batches of at most 25. The customer data, after being uploaded to S3 for staging would be further processed, flattened and transformed into one table/parquet file by a PySpark program. Additionally, a separate PySpark program would use this combined table to create a json file of each customer's data. These two files would be uploaded back to S3, where a AWS Glue crawler can comb through the combined table and make it queryable by AWS Athena, while the combined json file would serve as a knolwedge base for the AWS Bedrock chatbot. Lastly, Apache Superset is able to connect to both AWS DynamoDB and Athena to query all of the customer data and complaints.
