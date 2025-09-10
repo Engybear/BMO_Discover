@@ -86,4 +86,3 @@ I would also like to emphasize the end-to-end nature of this project and its sca
 ## Next Steps
 1. Consolidating the chatbot into the dashboard directly, and having it's knowledge base adjust dynamically to be able to pull from what's being filtered on-screen would make this pipeline significantly more pragmatic for real-world use cases
 2. Despite attempts to do so within the project's 1 week timeline, chunking the json data for the knowledge base is still not per customer and there's some overlap that can cause confusion if a customer name is not given within the prompt.
-3. 
