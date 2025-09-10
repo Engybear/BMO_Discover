@@ -7,8 +7,6 @@
 
 ###### Bank of Monetary Obligations (BMO)
 
-(WORK IN PROGRESS)
-
 <!-- TOC -->
 * [BMO_Discover](#bmo-discover)
   * [Inspiration, Purpose and Goals](#inspiration-purpose-and-goals)
@@ -73,15 +71,19 @@ Refer to Media for images of the dashboard and exmaples of the chatbot
 
 ## Challenges Faced
 
-1-week timeline
-Windows 11 setup, many hours sunk resolving errors and warnings from Spark and Hadoop
-Costs; utilizing AWS free tier and being careful to stay in free tier posed some limitations with what RAG-AI models I could use and databases that were available; Everything had to be text, no images or videos
-Being careful I kept costs limited to $0.11 CAD total, which were taken out of my starting $200 worth of free tier credits.
+Initially I was very concerned about the costs of cloud computing and how having to stick to AWS free tier would limit the project. This did pose some limitations with what RAG-AI models I could use and the AWS database hosts available such as having to use AWS Athena over Redshift. Also due to storage constraints, I had to ensure all my inputs were text, especially the streamed data; no images or videos. However, thanks to my vigilence while learning and experimenting with the free tier limits, I kept my costs limited to $0.11 CAD total, which were taken out of my starting $200 worth of free tier credits.
 
+Also when starting this project, I had given myself a 1-week timeline, as part of my reason for undertaking it was to practice my SQL fundamentals in preparation for an interview. Although I enjoyed the crunch and finished the project to an acceptable level, I couldn't spend as much time refining charts, generating more interesting and diversified data to work with, or configuring a more advanced AI chatbot.
+
+More impcatfully, a lot of this project's dependencies were designed with Linux in mind and not Windows 11. This lead to several hours of development time spent on resolving errors and warnings from Hadoop and Superset that blocked portions of my ETL pipeline.
 
 ## Accomplishments To Be Proud Of
-- learning as much as I did in this time period?
+
+Despite previous experience working with databases for AI purposes, this would be my first time actually working with SQL, along with AWS and a lot of parts like PySpark and Superset. Doing and learning as much as I did within the 1 week timeline is something I'm proud of and notably my interviewers felt the same.
+
+I would also like to emphasize the end-to-end nature of this project and its scalability. Although I'm working with a relatively small batch of data for the sake of a mock test, in a real use case the amount of input and processing that runs through Spark and AWS is capable of handling much, much larger data loads. I would argue, after consulting with a more senior expert in SQL and AWS for any cost optimizations that could be made, that this project could scale up to the throughput capacity needed for a bank to yield customer insights.
 
 ## Next Steps
-- consolidating the chatbot into the dashboard directly, and having it be able to pull from what's being filtered would make this pipeline significantly more applicable to real world use cases
-- despite attempts to do so, chunking for the knowledge base is still not per customer and there's some overlap that can cause confusion
+1. Consolidating the chatbot into the dashboard directly, and having it's knowledge base adjust dynamically to be able to pull from what's being filtered on-screen would make this pipeline significantly more pragmatic for real-world use cases
+2. Despite attempts to do so within the project's 1 week timeline, chunking the json data for the knowledge base is still not per customer and there's some overlap that can cause confusion if a customer name is not given within the prompt.
+3. 
