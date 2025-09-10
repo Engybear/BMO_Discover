@@ -18,30 +18,38 @@
 
 ## Inspiration, Purpose and Goals
 
-- made to put sql skills into an actual process
-- model batch and streamed input data and how to handle it
-- integrate AI into datasets that could update in real time
+Modern BI analytics dashboards often come with the cost of many queries being made to cloud data warehouses. As an alternative, what if instead queries could be made only at set periods (daily, weekly, etc.) to update a broad knowledge base, for which an in-house retriveal augmented generative (RAG) AI chatbot could reference for basic user questions that don't require loading in several queries every time that user accesses the dashboard?
 
-An end-to-end ETL pipeline built to service mock customer insights to a dashboard and AI query bot for a bank
+This is a small project that I personally created for the purpose of getting familiar with ETL pipelines and exploring the applications of AI alongside BI analytics. It's goals are to model and handle mock batch datasets as well as streamed input data and produce a practical dashboard and chatbot where information on mock customer insights are consolidated and can be referenced with ease.
 
 ## What It Does / Overview
 
-- chatbot
-- dashboard
-- filtering
+The Apache Superset platform both consolidates and breaks down the input data into 4 major categories:
+1. Customer Location and Credit Data
+2. Customer Loans
+3. Customer ATM Activity
+4. Customer Complaints (anonymized)
 
-MrGrabs is a medium-sized (16x16x20'') robot, capable of driving through doors with at lest 2' of clearance. It is built primarily out of PLA, with plexiglass and wood used to reinforce the chassis. The robot is controlled via a custom bluetooth APP on an Andriod phone, and integrated with a Microsoft Surface Pro running an application of another project to scan for, greet and wave to students on campus. It also has four HC-SR04 Ultrasonic Sensors that are unused but intended to be a safety feature to prevent collisions.
+For each of these, except anonymous customer complaints, the dashboard can be filtered in real time to a subset of or single customer id.
 
 <div align="center">
-  <img src="MrGrabs%20Pics/IMG_2423.JPG" style="transform: rotate(180deg); width: 450px;" />
-  <img src="MrGrabs%20Pics/IMG_2418.JPG" style="transform: rotate(180deg); width: 253px;" />
+  <img src="Media/Apache_Superset/image%20(1).png" style="width: 500px;" />
+  <img src="Media/Apache_Superset/image%20(2).png" style="width: 500px;" /> <br \>
+  <img src="Media/Apache_Superset/image%20(3).png" style="width: 500px;" />
+  <img src="Media/Apache_Superset/image%20(4).png" style="width: 500px;" /> 
+</div><br /><br />
+
+
+Additionally, the Bedrock platform allows for a user to query specific or broad questions about chunks of user data as shown here, including but not limited to credit score distributions, types of loans owed, calculating the total of all individual loans still owed of a particular customer, and even ATM activity patterns. 
+
+<div align="center">
+  <img src="Media/AWS_Bedrock/Chatbot_Test1.png" style="width: 500px;" />
+  <img src="Media/AWS_Bedrock/Chatbot_Test2.png" style="width: 500px;" />
 </div>
 
 ### Design Breakdown
 
-- www
-
-Here you can see an overview of the design. The phone connects to the principal controller of the robot (Arduino Nano 33 BLE), which directly manages the motors through the IRF3205. There are also 2 agent controllers, as the Adafruit Feather 32u4 BluefruitLE, that receive simple commands from the principal controller, which are individually used to control the 2 robotic arms, made up of 7 daisy chained AX12-A servos. The Arduino Nano itself is powered by and can recieve data from a mounted laptop, if desired. Lastly, there are HC-SR04 sensors that can be controlled by the Arduino Nano as well to lock up the motors if a collision is imminent.
+Here you can see an overview of the design. All inputs are randomly generated data that consist of large batch data and live streamed data. The batch data was done in python to generate unstructured csv data on ATM activity, semi-structed json data on credit information and loans, and a structured psql database containing basic customer info. The streamed data was done through a docker kafka (KRaft-managed) server that would receive randomly generated customer complaints every 5 seconds from a kafka producer, which would be read by a kafka consumer and uploaded to AWS DynamoDB in batches of at most 25. The customer data, after being uploaded to S3 for staging would be further processed, flattened and transformed into one table/parquet file by a PySpark program. Additionally, a separate PySpark program would use this combined table to create a json file of each customer's data. These two files would be uploaded back to S3, where a AWS Glue crawler can comb through the combined table and make it queryable by AWS Athena, while the combined json file would serve as a knolwedge base for the AWS Bedrock chatbot. Lastly, Apache Superset is able to connect to both AWS DynamoDB and Athena to query all of the customer data and complaints.
 
 <div align = "center"> 
   
@@ -49,33 +57,24 @@ Here you can see an overview of the design. The phone connects to the principal 
 
 </div>
 
-- Refer to MrGrabs Pics for more images of the robot
-
 ## File Organization / How It's Made
 
-- a lot of queries are stored on AWS (Glue, Athena, DynamoDB, Bedrock) and Apache Superset
-- kafka_stream for kafka producer, the docker kafka KRaft server / data broker, and kafka consumer which sends off to DynamoDB
-- inputs for the batch dataset of ~50 customer information split up between json, csv, and psql data
-- processing for pulling those inputs from s3 and converting them into a single parquet for SUperset and a json for the Bedrock knowledge base
-- Media for images of the dashboard and exmaples of the chatbot
+It should be noted that about 50% of the project's setup is on AWS (Glue, Athena, DynamoDB, Bedrock) and Apache Superset configurations along with cloud SQL queries which are not stored in this repository. All of the local processing done in python however is archived here.
 
+Refer to Inputs for the batch dataset of ~50 mock customers' information split up between json, csv, and psql data
 
-Refer to User Guide for setup and usage information
+Refer to Kafka_Stream for kafka producer, the docker kafka KRaft server / data broker, and kafka consumer which transmits the live stream of data to DynamoDB
 
-Refer to Construction Guide for system design information
+Refer to Processing for pulling the batch inputs from S3 staging and converting them into a single parquet for Superset and a json for the Bedrock knowledge base
 
-Refer to ArduinoCode/MainSketches for the code controlling the robot's code written in `C++`
-
-Refer to BluetoothApp for the BLE5.aia file used to configure the andriod app remote controller created through `MIT App Inventor`
-
-Refer to Step and Print files for CAD design and 3D printing files created in `Fusion360`
+Refer to Media for images of the dashboard and exmaples of the chatbot
 
 ## Challenges Faced
 
 1-week timeline
 Windows 11 setup, many hours sunk resolving errors and warnings from Spark and Hadoop
 Costs; utilizing AWS free tier and being careful to stay in free tier posed some limitations with what RAG-AI models I could use and databases that were available; Everything had to be text, no images or videos
-Being careful I kept costs limited to $0.11 CAD total
+Being careful I kept costs limited to $0.11 CAD total, which were taken out of my starting $200 worth of free tier credits.
 
 
 ## Accomplishments To Be Proud Of
